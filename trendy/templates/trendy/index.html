@@ -9,7 +9,7 @@
         <h2 class="mb-12 text-2xl text-center">Hot deals 🔥</h2>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5  ">
-            {% for item in items%}
+            {% for item in items %}
                 <div>
                     <a href="{% url 'item:detail' item.id %}">
                         <div class=" relative overflow-hidden transform hover:scale-110 transition-transform duration-300 ease-in-out">
