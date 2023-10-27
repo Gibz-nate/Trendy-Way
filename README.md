@@ -1,1 +1,1 @@
-"# Trendy-Way" 
+# Trendy-Way
