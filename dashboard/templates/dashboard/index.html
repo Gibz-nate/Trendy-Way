@@ -1,0 +1,27 @@
+{% extends 'trendy/base.html' %}
+
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+
+    <div class="mt-24 px-6 py-12 bg-slate-300 rounded-xl ">
+        <h2 class="mb-12 text-2xl text-center font-bold">My items</h2>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5  ">
+            {% for item in items%}
+                <div>
+                    <a href="{% url 'item:detail' item.id %}">
+                        <div class="relative overflow-hidden transform hover:scale-110 transition-transform duration-300 ease-in-out">
+                            <img src="{{ item.image.url }}" class="rounded-t-xl" alt="">
+                        </div>
+                        <div class="p-6 bg-orange-100 rounded-b-xl">
+                            <h2 class="text-2xl" >{{ item.name }}</h2>
+                            <p class="text-gray-500">Price:$ {{ item.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}    

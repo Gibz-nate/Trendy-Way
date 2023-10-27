@@ -1,0 +1,33 @@
+{% extends 'trendy/base.html' %}
+
+
+{% block title %} Inbox  {% endblock %}
+
+{% block content %}
+
+
+<div class="space-y-6 mt-24">
+    <h1 class="mb-6 text-3xl ">Inbox</h1>
+    {% for comms in conversation %}
+        <a href="{%url 'comms:detail' comms.id %}">
+            <div class="p-6 flex bg-gray-400 rounded-xl mt-6">
+                <div class="pr-6 ">
+                    <img src="{{ comms.item.image.url }}" class="w-20 rounded-xl">
+                </div>
+                <div class="">
+                    {% for member in comms.members.all  %}
+                        {% if member != request.user %}
+                            <p class="mb-4 "><strong>{{ member.username}}</strong> | {{ comms.modified_at }}</p>
+                            <p>{{ comms.item.name }}</p>
+                        
+                        {% endif %}
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'trendy/base.html' %}
+
+{% block title %}Browse{% endblock %}
+
+{% block content %}
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mt-24">
+        <div class=" col-span-1 bg-gray-200 rounded-xl text-center  place-items-center  px-20  ">
+           <strong class="font-bold" >➖Browse items➖</strong> 
+            <form method="get" action="{%url 'item:browse'%}">
+                <input type="text" name="query" class="w-3/4 py-3 px-4 border rounded-xl " value="{{ query }}" placeholder="search items"> 
+
+                <button class="mt-2 py-2 px-2 text-lg bg-teal-500 text-white rounded-xl hover:bg-green-700">Search </button>
+            </form>
+
+            <hr class="my-6">
+
+            <p class="font-bold uppercase">Categories</p>
+
+            <ul >
+                {% for category in categories %}
+                    <li class="py-2 px-2 rounded-xl {% if category.id == category_id %} bg-gray-200 {% endif %}">
+                        <a href="{% url 'item:browse' %}?query={{ query }}&category={{ category.id }}">{{ category.name}} </a>
+                    </li>
+
+                    {% endfor %}
+            </ul>
+            <hr class="my-6">
+
+            <p class="font-semibold text-center">➖Clear filters➖</p>
+
+            <ul class="flex flex-col items-center my-2">
+                <li>
+                    <a href="{% url 'item:browse'%}" class="mt-2   py-2 px-2 inline-block bg-yellow-500 text-lg rounded-xl text-white hover:bg-red-700">Clear</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-span-3">
+            <h1 class="text-center">RESULTS</h1>
+            <hr>
+            <br>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 ">
+                
+                {% for item in items%}
+                    <div>
+                        
+                        <a href="{% url 'item:detail' item.id %}">
+                            <div class="relative overflow-hidden transform hover:scale-110 transition-transform duration-300 ease-in-out">
+                                <img src="{{ item.image.url }}" class="rounded-t-xl" alt="">
+                            </div>
+                            <div class="p-6 bg-orange-100 rounded-b-xl">
+                                <h2 class="text-2xl" >{{ item.name }}</h2>
+                                <p class="text-gray-500">Price:$ {{ item.price }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

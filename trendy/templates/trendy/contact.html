@@ -1,0 +1,81 @@
+{% extends 'trendy/base.html' %}
+
+{% load static %}
+
+
+{% block title %} Contact {% endblock %}
+
+{% block content %}
+
+    
+<div class="flex mt-24 " >
+
+    <!-- Contact Information -->
+    <div class="w-1/4">
+        <h1 class="text-2xl font-bold mb-4">Trendy-Way</h1>
+        <div class="flex items-center mb-4">
+            <img src="{% static 'img/logo.png' %}" class="w-10 h-8" alt="Logo">
+            <p class="ml-2">Best p2p marketplace</p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-2">Office</h3>
+            <p>Nairobi</p>
+            <p>GTC TOWERS, 00100</p>
+            <p class="email hover:text-purple-500">
+                <a href="mailto:gibzrival@gmail.com.com">trendyway@gmail.com</a>
+            </p>
+            <h4>+254 701372889</h4>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="w-1/4">
+        <h3 class="text-xl font-bold mb-2">Links</h3>
+        <ul>
+            <li class="mb-1 hover:text-blue-500">
+                <a href="#">Home</a>
+            </li>
+            <li class="mb-1 hover:text-blue-500">
+                <a href="#">Services</a>
+            </li>
+            <li class="mb-1 hover:text-blue-500">
+                <a href="#">About us</a>
+            </li>
+            <li class="mb-1 hover:text-blue-500">
+                <a href="#">Features</a>
+            </li>
+            <li class="hover:text-blue-500">
+                <a href="#">Contact us</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Newsletter and Social Icons -->
+    <div class="w-1/4">
+        <h3 class="text-xl font-bold mb-2">Newsletter</h3>
+        <form class="mb-4" action="">
+            <i class="far fa-envelope mr-2 text-gray-600 hover:text-blue-500"></i>
+            <input
+                type="email"
+                class="border border-gray-300 rounded p-1"
+                placeholder="Enter your Email"
+                required
+            >
+            <button
+                type="submit"
+                class="bg-blue-500 hover:bg-blue-600 text-white rounded px-3 ml-2"
+            >
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+        <div class="flex space-x-2">
+            <a href="#"><i class="fab fa-facebook text-gray-600 hover:text-purple-500"></i></a>
+            <a href="#"><i class="fab fa-twitter text-gray-600 hover:text-blue-500"></i></a>
+            <a href="#"><i class="fab fa-whatsapp text-gray-600 hover:text-green-500"></i></a>
+            <a href="#"><i class="fab fa-instagram text-gray-600 hover:text-pink-500"></i></a> 
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
