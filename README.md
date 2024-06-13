@@ -92,7 +92,7 @@ If you'd like to contribute to Trendy-Way, please follow these steps:
 
 5. Create a pull request to the main repository with a detailed description of your changes.
 
-We welcome your contributions and will review your pull request as soon as possible.
+
 
 ## Issues
 
@@ -100,9 +100,8 @@ If you encounter any issues or have suggestions for improvements, please [create
 
 
 
-**Note:** The Vercel link is currently broken. To run the project, follow the instructions provided above. We apologize for any inconvenience.
+**Note:** The Vercel link is currently broken. To run the project, follow the instructions provided above.
 
 Happy coding, and enjoy using Trendy-Way! 🚀
 ```
 
-Replace `"your-username"` in the URLs with your actual GitHub username where the repository is hosted. 
